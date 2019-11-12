@@ -10,6 +10,7 @@ class ColorChanger extends React.Component {
 
         this.swapToFrame = this.swapToFrame.bind(this);
         this.swapToContent = this.swapToContent.bind(this);
+        this.colorList = this.colorList.bind(this);
     }
 
     swapToFrame() {
@@ -18,6 +19,19 @@ class ColorChanger extends React.Component {
 
     swapToContent() {
         this.setState({marginLeft: -100});
+    }
+
+    colorList() {
+        const colors = [
+            '#bac1b8', '#58a4b0', '#0c7c59', '#2b303a', '#d64933'
+        ];
+
+        const liElems = colors.map((item, index) => {
+            return <li>{item}</li>;
+        });
+
+
+        return <ul>{liElems}</ul>
     }
 
     render() {
@@ -43,8 +57,12 @@ class ColorChanger extends React.Component {
                     className="setup-wrapper"
                     style={setupWrapperStyle}
                 >
-                    <div className="changer-frame"></div>
-                    <div className="changer-content"></div>
+                    <div className="changer-frame">
+                        {this.colorList()}
+                    </div>
+                    <div className="changer-content">
+                        {this.colorList()}
+                    </div>
                 </div>
             </div>
         );
@@ -56,7 +74,7 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            showChanger: false,
+            showChanger: true,
         }
 
         this.toggleChanger = this.toggleChanger.bind(this);
