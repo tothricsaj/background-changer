@@ -20,3 +20,26 @@
 .App-link {
   color: #09d3ac;
 }
+
+.title {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.frame {
+    width: 100vw;
+    height: 100vh;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    width: 90vw;
+    height: 90vh;
+    background-color: orangered;
+}
+
