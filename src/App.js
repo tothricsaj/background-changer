@@ -1,16 +1,51 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class ColorChanger extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            marginLeft: 0,
+        };
+
+        this.swapToFrame = this.swapToFrame.bind(this);
+        this.swapToContent = this.swapToContent.bind(this);
+    }
+
+    swapToFrame() {
+        this.setState({marginLeft: 0});
+    }
+
+    swapToContent() {
+        this.setState({marginLeft: -100});
     }
 
     render() {
+        let setupWrapperStyle = {
+            marginLeft: this.state.marginLeft + '%',
+        };
+
         return (
             <div className="changer-wrapper">
-                Kiscica füle
+                <div 
+                    className="frame-btn"
+                    onClick={this.swapToFrame}
+                >
+                    Frame
+                </div>
+                <div 
+                    className="content-btn"
+                    onClick={this.swapToContent}
+                >
+                    Content
+                </div>
+                <div 
+                    className="setup-wrapper"
+                    style={setupWrapperStyle}
+                >
+                    <div className="changer-frame"></div>
+                    <div className="changer-content"></div>
+                </div>
             </div>
         );
     }

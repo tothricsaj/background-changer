@@ -53,4 +53,50 @@
     cursor: pointer;
 }
 
+.changer-wrapper {
+    width: 300px;
+    height: 350px;
+    position: absolute;
+    top: 19vh;
+    left: 10vw;
+    border: 1px solid black;
+    overflow: hidden;
+}
 
+.frame-btn,
+.content-btn {
+    width: 50%;
+    height: 15%;
+    float: left;
+    cursor: pointer;
+}
+
+.frame-btn {
+    background-color: lightblue;
+}
+
+.content-btn {
+    background-color: lightseagreen;
+}
+
+.setup-wrapper {
+    width: 200%;
+    height: 85%;
+    transition: .4s;
+    clear: left;
+}
+
+.changer-frame,
+.changer-content{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.changer-frame {
+    background-color: lightblue;
+}
+
+.changer-content {
+    background-color: lightseagreen;
+}
