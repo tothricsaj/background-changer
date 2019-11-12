@@ -28,11 +28,9 @@ class ColorChanger extends React.Component {
 
         const liElems = colors.map((item, index) => {
             let liStyle = {
-                width: '80%',
-                height: '15px',
                 backgroundColor: item
             }
-            return <li style={liStyle} ></li>;
+            return <li key={index} style={liStyle} ></li>;
         });
 
 
