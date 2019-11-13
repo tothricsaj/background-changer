@@ -6,11 +6,14 @@ class ColorChanger extends React.Component {
         super(props);
         this.state = {
             marginLeft: 0,
+            bgColor: 'orange',
+            frameColor: 'orangered',
         };
 
         this.swapToFrame = this.swapToFrame.bind(this);
         this.swapToContent = this.swapToContent.bind(this);
         this.colorList = this.colorList.bind(this);
+        this.colorSet = this.colorSet.bind(this);
     }
 
     swapToFrame() {
@@ -19,6 +22,16 @@ class ColorChanger extends React.Component {
 
     swapToContent() {
         this.setState({marginLeft: -100});
+    }
+
+    colorSet(color, frame) {
+        if(frame) {
+            this.setState({frameColor: color});
+        } else {
+            this.setState({bgColor: color});
+        }
+
+        console.log(this.state.frameColor);
     }
 
     colorList() {
@@ -30,7 +43,7 @@ class ColorChanger extends React.Component {
             let liStyle = {
                 backgroundColor: item
             }
-            return <li key={index} style={liStyle} ></li>;
+            return <li key={index} style={liStyle} onClick={() => this.colorSet(item, true)} ></li>;
         });
 
 
