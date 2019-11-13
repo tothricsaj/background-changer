@@ -1,9 +1,9 @@
 export default (state, action) => {
     switch(action.type) {
         case 'frameColor':
-            return {...,state, action.color};
+            return {...state, ...{frameColor: action.color}};
         case 'bgColor':
-            return {...,state, action.color};
+            return {...state, ...{bgColor: action.color}};
         default:
             return state;
 
