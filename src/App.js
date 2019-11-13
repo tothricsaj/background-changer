@@ -27,14 +27,16 @@ class ColorChanger extends React.Component {
     colorSet(color, frame) {
         if(frame) {
             this.setState({frameColor: color});
+            console.log(this.state.frameColor);
         } else {
             this.setState({bgColor: color});
+            console.log(this.state.bgColor);
+
         }
 
-        console.log(this.state.frameColor);
     }
 
-    colorList() {
+    colorList(frame) {
         const colors = [
             '#bac1b8', '#58a4b0', '#0c7c59', '#2b303a', '#d64933'
         ];
@@ -43,7 +45,7 @@ class ColorChanger extends React.Component {
             let liStyle = {
                 backgroundColor: item
             }
-            return <li key={index} style={liStyle} onClick={() => this.colorSet(item, true)} ></li>;
+            return <li key={index} style={liStyle} onClick={() => this.colorSet(item, frame)} ></li>;
         });
 
 
@@ -74,10 +76,10 @@ class ColorChanger extends React.Component {
                     style={setupWrapperStyle}
                 >
                     <div className="changer-frame">
-                        {this.colorList()}
+                        {this.colorList(true)}
                     </div>
                     <div className="changer-content">
-                        {this.colorList()}
+                        {this.colorList(false)}
                     </div>
                 </div>
             </div>
