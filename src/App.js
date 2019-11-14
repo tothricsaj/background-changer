@@ -3,12 +3,14 @@ import './App.css';
 import { connect } from 'react-redux';
 import { bgcolorAction } from './actions/bgcolorAction.js';
 import { framecolorAction } from './actions/framecolorAction.js';
+import { Provider } from 'react-redux';
+import configStore from './store.js';
 
 const mapStateToProps = state => ({...state});
 
 const mapDispatchToProps = dispatch => ({
-    bgcolorAction: () => dispatch(bgcolorAction),
-    framecolorAction: () => dispatch(framecolorAction)
+    bgcolorAction: (color) => dispatch(bgcolorAction(color)),
+    framecolorAction: (color) => dispatch(framecolorAction(color))
 })
 
 class ColorChanger extends React.Component {
@@ -97,7 +99,7 @@ class ColorChanger extends React.Component {
     }
 }
 
-connect()(ColorChanger);
+connect(mapStateToProps, mapDispatchToProps)(ColorChanger);
 
 class App extends React.Component {
     constructor(props) {
@@ -131,7 +133,9 @@ class App extends React.Component {
                         </div>
 
                         {this.state.showChanger &&
-                            <ColorChanger />
+                            <Provider store={configStore()}>
+                                <ColorChanger />
+                            </Provider>
                         }
 
                     </div>

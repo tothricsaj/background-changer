@@ -7,7 +7,7 @@ const defaultStore = {
     frameColor: '#bac1b8',
 };
 
-function configStore(store = defaultStore) {
+function configStore(state = defaultStore) {
     createStore(ColorSetterReducer, state);
 }
 
