@@ -2,7 +2,14 @@ import React from 'react';
 import './App.css';
 import { connect } from 'react-redux';
 import { bgcolorAction } from './actions/bgcolorAction.js';
-import { framecolorActionj } from './action/framecolorAction.js';
+import { framecolorAction } from './actions/framecolorAction.js';
+
+const mapStateToProps = state => ({...state});
+
+const mapDispatchToProps = dispatch => ({
+    bgcolorAction: () => dispatch(bgcolorAction),
+    framecolorAction: () => dispatch(framecolorAction)
+})
 
 class ColorChanger extends React.Component {
     constructor(props) {

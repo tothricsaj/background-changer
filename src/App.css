@@ -75,6 +75,7 @@ li {
 .changer-wrapper {
     width: 300px;
     height: 250px;
+    margin-top: 5px;
     position: absolute;
     top: 19vh;
     left: 10vw;
