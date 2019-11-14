@@ -50,7 +50,7 @@ li {
 .frame {
     width: 100vw;
     height: 100vh;
-    background-color: orange;
+    background-color: #bac1b8;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,7 +59,7 @@ li {
 .content {
     width: 90vw;
     height: 85vh;
-    background-color: orangered;
+    background-color: #0c7c59;
 }
 
 
