@@ -1,5 +1,8 @@
 import React from 'react';
 import './App.css';
+import { connect } from 'react-redux';
+import { bgcolorAction } from './actions/bgcolorAction.js';
+import { framecolorActionj } from './action/framecolorAction.js';
 
 class ColorChanger extends React.Component {
     constructor(props) {
@@ -86,6 +89,8 @@ class ColorChanger extends React.Component {
         );
     }
 }
+
+connect()(ColorChanger);
 
 class App extends React.Component {
     constructor(props) {

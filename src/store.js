@@ -10,3 +10,5 @@ const defaultStore = {
 function configStore(store = defaultStore) {
     createStore(ColorSetterReducer, state);
 }
+
+export default configStore;
