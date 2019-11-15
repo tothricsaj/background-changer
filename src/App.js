@@ -3,6 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 import { msgAction } from './actions/msgAction.js';
 
+const msgReducer = (state, action) => {
+    switch(action.type) {
+        case 'msg':
+            return {...state, ...action.msg}
+        default: 
+            return state;
+    }
+};
 
 class App extends React.Component {
 
