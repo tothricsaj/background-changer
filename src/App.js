@@ -14,6 +14,16 @@ const msgReducer = (state, action) => {
     }
 };
 
+const mapStateToProps = (state) => {
+    return {...state};
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        msgAction: (msg) => dispatch(msgAction(msg))
+    };
+};
+
 const store = createStore(msgReducer);
 
 class App extends React.Component {
@@ -27,4 +37,4 @@ class App extends React.Component {
       }
 }
 
-export default connect()(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
