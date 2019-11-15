@@ -2,17 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { msgAction } from './actions/msgAction.js';
-import { createStore } from 'react';
 import { connect } from "react-redux";
 
-const msgReducer = (state, action) => {
-    switch(action.type) {
-        case 'msg':
-            return {...state, ...action.msg}
-        default: 
-            return state;
-    }
-};
 
 const mapStateToProps = (state) => {
     return {...state};
@@ -24,14 +15,22 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-const store = createStore(msgReducer);
 
 class App extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            msg: 'Hello React-Redux'
+        }
+    }
 
     render() {
         return (
             <div className="App">
             <h2>Redux-React basics</h2>
+
+            <p>{this.props.msg}</p>
         </div>
         );
       }
