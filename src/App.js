@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { msgAction } from './actions/msgAction.js';
+import { createStore } from 'react';
+import { connect } from "react-redux";
 
 const msgReducer = (state, action) => {
     switch(action.type) {
@@ -11,6 +13,8 @@ const msgReducer = (state, action) => {
             return state;
     }
 };
+
+const store = createStore(msgReducer);
 
 class App extends React.Component {
 
@@ -23,4 +27,4 @@ class App extends React.Component {
       }
 }
 
-export default App;
+export default connect()(App);
