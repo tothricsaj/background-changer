@@ -3,7 +3,6 @@ import './App.css';
 import { connect } from 'react-redux';
 import { bgcolorAction } from './actions/bgcolorAction.js';
 import { framecolorAction } from './actions/framecolorAction.js';
-import { Provider } from 'react-redux';
 import configStore from './store.js';
 
 const mapStateToProps = state => ({...state});
@@ -99,7 +98,6 @@ class ColorChanger extends React.Component {
     }
 }
 
-connect(mapStateToProps, mapDispatchToProps)(ColorChanger);
 
 class App extends React.Component {
     constructor(props) {
@@ -133,9 +131,7 @@ class App extends React.Component {
                         </div>
 
                         {this.state.showChanger &&
-                            <Provider store={configStore()}>
-                                <ColorChanger />
-                            </Provider>
+                            <ColorChanger />
                         }
 
                     </div>
@@ -146,4 +142,5 @@ class App extends React.Component {
     }
   }
 
-export default App;
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
