@@ -8,7 +8,7 @@ const defaultStore = {
 };
 
 function configStore(state = defaultStore) {
-    createStore(ColorSetterReducer, state);
+    return createStore(ColorSetterReducer, state);
 }
 
 export default configStore;

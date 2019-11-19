@@ -3,7 +3,6 @@ import './App.css';
 import { connect } from 'react-redux';
 import { bgcolorAction } from './actions/bgcolorAction.js';
 import { framecolorAction } from './actions/framecolorAction.js';
-import configStore from './store.js';
 
 const mapStateToProps = state => ({...state});
 
