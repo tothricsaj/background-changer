@@ -3,8 +3,8 @@ import ColorSetterReducer from './reducers/ColorSetterReducer.js';
 
 const defaultStore = {
     marginLeft: 0,
-    bgColor: '#0c7c59',
-    frameColor: '#bac1b8',
+    frameBgColor: '#bac1b8',
+    contentBgColor: '#0c7c59',
 };
 
 function configStore(state = defaultStore) {

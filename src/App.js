@@ -104,6 +104,8 @@ class App extends React.Component {
 
         this.state = {
             showChanger: true,
+            frameBgColor: this.props.frameBgColor, // '#bac1b8',
+            contentBgColor: this.props.contentBgColor // '#0c7c59'
         }
 
         this.toggleChanger = this.toggleChanger.bind(this);
@@ -130,7 +132,10 @@ class App extends React.Component {
                         </div>
 
                         {this.state.showChanger &&
-                            <ColorChanger />
+                            <ColorChanger 
+                                bgcolorAction={this.props.bgcolorAction} 
+                                framecolorAction={this.props.framecolorAction}
+                            />
                         }
 
                     </div>
