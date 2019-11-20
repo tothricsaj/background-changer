@@ -124,8 +124,8 @@ class App extends React.Component {
                     Background changer app
                 </h2>
 
-                <div className="frame" style={{backgroundColor: this.state.frameBgColor}}>
-                    <div className="content" style={{backgroundColor: this.state.contentBgColor}}>
+                <div className="frame" style={{backgroundColor: this.props.frameBgColor}}>
+                    <div className="content" style={{backgroundColor: this.props.contentBgColor}}>
                         <div 
                             className="colorChanger"
                             onClick={this.toggleChanger}
