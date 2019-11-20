@@ -23,7 +23,6 @@ class ColorChanger extends React.Component {
         this.swapToFrame = this.swapToFrame.bind(this);
         this.swapToContent = this.swapToContent.bind(this);
         this.colorList = this.colorList.bind(this);
-        this.colorSet = this.colorSet.bind(this);
     }
 
     swapToFrame() {
@@ -32,18 +31,6 @@ class ColorChanger extends React.Component {
 
     swapToContent() {
         this.setState({marginLeft: -100});
-    }
-
-    colorSet(color, frame) {
-        if(frame) {
-            this.setState({frameColor: color});
-            console.log(this.state.frameColor);
-        } else {
-            this.setState({bgColor: color});
-            console.log(this.state.bgColor);
-
-        }
-
     }
 
     colorList(frame) {
