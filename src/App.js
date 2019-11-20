@@ -92,7 +92,7 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            showChanger: true,
+            showChanger: false,
             frameBgColor: this.props.frameBgColor, // '#bac1b8',
             contentBgColor: this.props.contentBgColor // '#0c7c59'
         }
