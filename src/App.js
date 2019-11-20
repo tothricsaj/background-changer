@@ -51,11 +51,13 @@ class ColorChanger extends React.Component {
             '#bac1b8', '#58a4b0', '#0c7c59', '#2b303a', '#d64933'
         ];
 
+        let colorFunc = frame ? this.props.framecolorAction : this.props.bgcolorAction;
+
         const liElems = colors.map((item, index) => {
             let liStyle = {
                 backgroundColor: item
             }
-            return <li key={index} style={liStyle} onClick={() => this.colorSet(item, frame)} ></li>;
+            return <li key={index} style={liStyle} onClick={() => colorFunc(item)} ></li>;
         });
 
 
@@ -122,8 +124,8 @@ class App extends React.Component {
                     Background changer app
                 </h2>
 
-                <div className="frame">
-                    <div className="content">
+                <div className="frame" style={{backgroundColor: this.state.frameBgColor}}>
+                    <div className="content" style={{backgroundColor: this.state.contentBgColor}}>
                         <div 
                             className="colorChanger"
                             onClick={this.toggleChanger}
